@@ -4,31 +4,21 @@
 
 using namespace std;
 
-void shell_loop(void)
-{
-  char *line;
-  char **args;
-  int status;
-  
-  do{
-    printf("$");
-    line = shell_read_line();
-    args = shell_split_line(line);
-    status - shell_execute(args);
 
-    free(line);
-    free(args);
-  }while(status);
+int main()
+{
+string command;
+cout<< "test command please\n";
+while (command != "exit")
+{
+    if (command == "printenv")
+        system("printenv");
+    else if (command == "ls")
+        system("ls");
+    else if (command=="env")
+        system("env");
+cout<<"%";
+cin>>command;
 }
-
-int main(int argc, char **argv)
-{
-  // Load config files, if any.
-
-  // Run command loop.
-  shell_loop();
-
-  // Perform any shutdown/cleanup.
-
-  return EXIT_SUCCESS;
+return 0;
 }
